@@ -76,9 +76,27 @@
     }
 
     .coming-soon p {
-      margin-top: 15px;
       font-size: 18px;
-      opacity: 0.8;
+      margin-top: 20px;
+    }
+
+    .back-button {
+      margin-top: 30px;
+      background: var(--primary-color);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .back-button:hover {
+      background: var(--secondary-color);
+      transform: scale(1.05);
     }
 
     @keyframes fadeIn {
@@ -104,28 +122,35 @@
       padding: 20px;
       font-size: 14px;
       opacity: 0.6;
+      text-align: center;
+    }
+
+    footer .discord {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="logo">NeoGuardian</div>
+    <div class="logo">My Project</div>
     <nav>
       <a href="#">Home</a>
-      <a href="https://neoguardianbot.space/terminos-condiciones">Terms</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
+      <a href="https://neoguardianbot.space/terms-conditions">Terms</a>
     </nav>
   </header>
 
   <div class="coming-soon">
     <h1>Coming Soon!</h1>
-    <p>We are working hard to bring you something amazing. Stay tuned!</p>
+    <p>We are working hard to bring you something amazing. It will be ready soon!</p>
+    <a href="https://neoguardianbot.space/terms-conditions" class="back-button">View Terms and Conditions</a>
   </div>
 
   <footer>
-    © 2025 NeoGuardian - All rights reserved
+    <p>© 2025 My Project - All rights reserved</p>
+    <p class="discord">Discord: <strong>alvaro3016</strong></p>
   </footer>
 </body>
 </html>
