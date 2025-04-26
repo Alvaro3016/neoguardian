@@ -4,53 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Términos y Condiciones</title>
+    <style>
+        :root {
+            --background-light: #f4f6f8;
+            --background-dark: #1e1e2f;
+            --text-light: #333;
+            --text-dark: #f0f0f0;
+            --primary-color: #0056b3;
+            --card-light: #fff;
+            --card-dark: #2b2b3d;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-light);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary-color);
+            padding: 10px 20px;
+            color: white;
+            font-size: 22px;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 900px;
+            background-color: var(--card-light);
+            margin: 60px auto 40px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+            margin-top: 20px;
+        }
+
+        p, li {
+            line-height: 1.7;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.7s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: var(--background-dark);
+                color: var(--text-dark);
+            }
+            .container {
+                background-color: var(--card-dark);
+            }
+            header {
+                background-color: #0078d7;
+            }
+            h1, h2 {
+                color: #66aaff;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Términos y Condiciones</h1>
-    <p>Términos y Condiciones de Uso del Bot de Discord
-Última actualización: 25/04/2025
+    <header>Términos y Condiciones</header>
 
-1. Aceptación de los Términos
-Al usar este bot en tu servidor de Discord, aceptas estos Términos y Condiciones en su totalidad. Si no estás de acuerdo con alguna parte de estos términos, no utilices el bot.
+    <div class="container">
+        <p><strong>Última actualización:</strong> 25/04/2025</p>
 
-2. Uso del Bot
-Este bot es una herramienta de moderación y automatización para servidores de Discord. Al agregar el bot a tu servidor, entiendes que es tu responsabilidad utilizarlo de manera ética y legal. El uso de este bot debe cumplir con las reglas de Discord y con todas las leyes aplicables.
+        <div class="section">
+            <h2>1. Aceptación de los Términos</h2>
+            <p>Al usar este bot en tu servidor de Discord, aceptas estos Términos y Condiciones en su totalidad. Si no estás de acuerdo con alguna parte de estos términos, no utilices el bot.</p>
+        </div>
 
-3. Responsabilidades del Usuario
-Moderación: El bot tiene comandos de moderación como kick, ban, mute, entre otros. Asegúrate de usar estas funciones de manera responsable y en línea con las normas de tu comunidad.
+        <div class="section">
+            <h2>2. Uso del Bot</h2>
+            <p>Este bot es una herramienta de moderación y automatización para servidores de Discord. El uso debe ser ético, legal y respetar las normas de Discord y las leyes aplicables.</p>
+        </div>
 
-Comandos Personalizados: Si creas comandos personalizados, es tu responsabilidad asegurarte de que estos no infringen las normas de Discord o de este bot.
+        <div class="section">
+            <h2>3. Responsabilidades del Usuario</h2>
+            <ul>
+                <li><strong>Moderación:</strong> Usar funciones como kick, ban o mute de manera responsable.</li>
+                <li><strong>Comandos Personalizados:</strong> Asegurarse de que no infrinjan las normas.</li>
+                <li><strong>Datos Personales:</strong> El bot no almacena datos personales, solo registros de actividad accesibles para administradores.</li>
+            </ul>
+        </div>
 
-Datos Personales: El bot no almacena información personal de los usuarios. Sin embargo, los administradores pueden acceder a los registros generados por el bot (como advertencias y registros de actividad).
+        <div class="section">
+            <h2>4. Prohibiciones</h2>
+            <p>Está prohibido usar el bot para:</p>
+            <ul>
+                <li>Spam o ataques a otros usuarios o servidores.</li>
+                <li>Hackear o manipular el bot.</li>
+                <li>Acosar, intimidar o discriminar usuarios.</li>
+            </ul>
+        </div>
 
-4. Prohibiciones
-El uso del bot para realizar actividades ilegales o perjudiciales está estrictamente prohibido. Esto incluye, pero no se limita a:
+        <div class="section">
+            <h2>5. Modificaciones al Bot</h2>
+            <p>Nos reservamos el derecho de modificar, actualizar o suspender funciones del bot sin previo aviso.</p>
+        </div>
 
-El uso del bot para hacer spam o realizar ataques a otros usuarios o servidores.
+        <div class="section">
+            <h2>6. Exoneración de Responsabilidad</h2>
+            <p>El bot se proporciona "tal cual" y no nos responsabilizamos por daños derivados de su uso.</p>
+        </div>
 
-Intentar hackear o manipular el código del bot.
+        <div class="section">
+            <h2>7. Privacidad</h2>
+            <p>No recopilamos información personal. Solo datos de actividad del bot para mejora interna, gestionados bajo nuestra política de privacidad.</p>
+        </div>
 
-Utilizar el bot para acosar, intimidar o discriminar a otros usuarios de Discord.
+        <div class="section">
+            <h2>8. Terminación de la Cuenta</h2>
+            <p>Podemos suspender o eliminar el acceso al bot en caso de uso inapropiado.</p>
+        </div>
 
-5. Modificaciones al Bot
-Nos reservamos el derecho de modificar, actualizar o suspender temporalmente las funciones del bot sin previo aviso. Esto puede incluir, pero no se limita a, cambios en los comandos, funcionalidades o la eliminación de comandos que violen las políticas de Discord.
+        <div class="section">
+            <h2>9. Cambios en los Términos y Condiciones</h2>
+            <p>Estos términos pueden ser modificados en cualquier momento y se aplicarán inmediatamente tras su publicación.</p>
+        </div>
 
-6. Exoneración de Responsabilidad
-Este bot se proporciona tal cual y no nos hacemos responsables de ningún daño directo, indirecto, incidental, especial o consecuente derivado del uso del bot. Esto incluye, pero no se limita a, la pérdida de datos, interrupciones del servicio o daños a la infraestructura del servidor.
+        <div class="section">
+            <h2>10. Ley Aplicable</h2>
+            <p>Se rigen por las leyes del país donde esté registrado el propietario del bot.</p>
+        </div>
 
-7. Privacidad
-El bot no recopila ni almacena información personal de los usuarios. Sin embargo, es posible que se recopilen ciertos datos de actividad del bot (como comandos utilizados y errores generados) para mejorar el rendimiento y la funcionalidad. Todos estos datos son gestionados de acuerdo con nuestra política de privacidad.
-
-8. Terminación de la Cuenta
-Si un usuario o administrador del servidor usa el bot de manera inapropiada o en violación de estos términos, nos reservamos el derecho de suspender o eliminar el acceso al bot en ese servidor sin previo aviso.
-
-9. Cambios en los Términos y Condiciones
-Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de ser publicadas en la plataforma donde se esté utilizando el bot. Al continuar usando el bot, aceptas estar sujeto a las condiciones modificadas.
-
-10. Ley Aplicable
-Estos términos se rigen e interpretan de acuerdo con las leyes del país en el que el propietario del bot esté registrado. Cualquier disputa será resuelta ante los tribunales competentes de esa jurisdicción.
-
-Política de Privacidad
-El bot respeta la privacidad de los usuarios y no recopila información personal identificable. Los datos que podrían ser recopilados incluyen los registros de comandos (para fines de análisis y mejora del servicio) y datos de actividad del servidor. Estos datos son mantenidos de forma segura y no se comparten con terceros sin el consentimiento expreso de los administradores del servidor.</p>
+        <div class="section">
+            <h2>Política de Privacidad</h2>
+            <p>Respetamos la privacidad de los usuarios. Solo recopilamos datos mínimos necesarios para análisis interno, sin compartirlos a terceros.</p>
+        </div>
+    </div>
 </body>
 </html>
