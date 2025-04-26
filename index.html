@@ -2,104 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeoGuardian - Coming Soon</title>
+  
   <style>
     :root {
-      --primary-color: #8e2de2;
-      --secondary-color: #4a00e0;
-      --text-color: #ffffff;
-      --glass-bg: rgba(0, 0, 0, 0.4);
+      --primary: #8e2de2;
+      --secondary: #4a00e0;
+      --text-light: #ffffff;
+      --glass-bg: rgba(255, 255, 255, 0.1);
     }
 
-    body {
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      height: 100vh;
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: var(--text-color);
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-light);
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 0;
     }
 
     header {
-      width: 100%;
-      padding: 20px 30px;
-      background: var(--glass-bg);
-      backdrop-filter: blur(10px);
       position: fixed;
       top: 0;
-      left: 0;
+      width: 100%;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    header .logo {
-      font-size: 24px;
+    .logo {
+      font-size: 28px;
       font-weight: bold;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
     }
 
     nav a {
-      margin: 0 15px;
-      color: var(--text-color);
       text-decoration: none;
+      color: var(--text-light);
       font-weight: 500;
-      transition: color 0.3s;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: background 0.3s ease;
     }
 
     nav a:hover {
-      color: #ddd;
+      background: rgba(255, 255, 255, 0.2);
     }
 
-    .coming-soon {
-      margin-top: 120px;
-      padding: 50px;
-      background: var(--glass-bg);
-      backdrop-filter: blur(15px);
-      border-radius: 15px;
+    .container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 2;
+      position: relative;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      animation: fadeIn 1s ease forwards;
-      transform: translateY(20px);
-      opacity: 0;
+      padding: 20px;
+      animation: fadeIn 1.5s ease;
     }
 
-    .coming-soon h1 {
-      font-size: 40px;
-      margin: 0;
-      animation: pop 1s ease forwards;
+    .container h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
+      background: linear-gradient(45deg, #ffe53b, #ff2525);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: pop 1s ease;
     }
 
-    .coming-soon p {
-      font-size: 18px;
-      margin-top: 20px;
+    .container p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      max-width: 600px;
+      opacity: 0.8;
     }
 
-    .back-button {
-      margin-top: 30px;
-      background: var(--primary-color);
+    .button {
+      padding: 14px 30px;
+      font-size: 16px;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
       color: white;
-      padding: 12px 25px;
+      border: none;
       border-radius: 30px;
       text-decoration: none;
-      font-size: 16px;
-      font-weight: 600;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
-    .back-button:hover {
-      background: var(--secondary-color);
-      transform: scale(1.05);
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.7;
+      z-index: 2;
     }
 
     @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
       to {
         opacity: 1;
         transform: translateY(0);
@@ -107,50 +149,100 @@
     }
 
     @keyframes pop {
-      0% {
-        transform: scale(0.8);
+      from {
         opacity: 0;
+        transform: scale(0.8);
       }
-      100% {
-        transform: scale(1);
+      to {
         opacity: 1;
+        transform: scale(1);
       }
     }
 
-    footer {
-      margin-top: auto;
-      padding: 20px;
-      font-size: 14px;
-      opacity: 0.6;
-      text-align: center;
-    }
+    @media (max-width: 768px) {
+      .container h1 {
+        font-size: 48px;
+      }
 
-    footer .discord {
-      font-size: 16px;
-      font-weight: bold;
-      margin-top: 10px;
+      .container p {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="logo">My Project</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="https://neoguardianbot.space/terms-conditions">Terms</a>
-    </nav>
-  </header>
 
-  <div class="coming-soon">
-    <h1>Coming Soon!</h1>
-    <p>We are working hard to bring you something amazing. It will be ready soon!</p>
-    <a href="https://neoguardianbot.space/terms-conditions" class="back-button">View Terms and Conditions</a>
-  </div>
+<div id="particles-js"></div>
 
-  <footer>
-    <p>© 2025 My Project - All rights reserved</p>
-    <p class="discord">Discord: <strong>alvaro3016</strong></p>
-  </footer>
+<header>
+  <div class="logo">NeoGuardian</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="https://neoguardianbot.space/terms-conditions" target="_blank">Terms</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>Coming Soon!</h1>
+  <p>We are building something incredible for you. Stay tuned, the future is near.</p>
+  <a href="https://neoguardianbot.space/terms-conditions" class="button" target="_blank">View Terms</a>
+</main>
+
+<footer>
+  © 2025 NeoGuardian. All rights reserved. | Discord: <strong>alvaro3016</strong>
+</footer>
+
+<!-- Particle.js Script -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS('particles-js',
+  {
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#ffffff"
+      },
+      "shape": {
+        "type": "circle"
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": true
+      },
+      "size": {
+        "value": 3,
+        "random": true
+      },
+      "move": {
+        "enable": true,
+        "speed": 1.5,
+        "direction": "none",
+        "out_mode": "out"
+      }
+    },
+    "interactivity": {
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "repulse"
+        }
+      },
+      "modes": {
+        "repulse": {
+          "distance": 100
+        }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+
 </body>
 </html>
